@@ -34,8 +34,6 @@ public class  LaboratoryManageController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
 
-
-	
 	@RequestMapping(value = "/module/LabM/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
 		SpecimenService specimenService = Context.getService(SpecimenService.class);
