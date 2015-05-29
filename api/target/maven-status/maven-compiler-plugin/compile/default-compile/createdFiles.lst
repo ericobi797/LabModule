@@ -1,0 +1,6 @@
+org\openmrs\module\LabM\api\impl\SpecimenServiceImpl.class
+org\openmrs\module\LabM\api\db\hibernate\HibernateSpecimenDAO.class
+org\openmrs\module\LabM\api\db\SpecimenDAO.class
+org\openmrs\module\LabM\LaboratoryActivator.class
+org\openmrs\module\LabM\api\SpecimenService.class
+org\openmrs\module\LabM\Specimen.class
