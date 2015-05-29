@@ -22,6 +22,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -32,13 +33,23 @@ import java.util.List;
 public class  LaboratoryManageController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
+	SpecimenService specimenService = Context.getService(SpecimenService.class);
 
 	
 	@RequestMapping(value = "/module/LabM/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
-		SpecimenService specimenService = Context.getService(SpecimenService.class);
 		model.addAttribute("user", Context.getAuthenticatedUser());
 		List<Specimen> specimenList = specimenService.getAllSpecimen();
 		model.addAttribute("allspecimen", specimenList);
+	}
+	@RequestMapping("/module/Laboratory/savespecimen")
+	public String save(@RequestParam(value = "description", required = false) String desc,
+					   @RequestParam(value = "sname", required = false) String name
+	){
+		Specimen specimen = new Specimen();
+		specimen.setName(name);
+		specimen.setDescription(desc);
+      	specimenService.saveSpecimen(specimen);
+		return "Redirect:manage.form";
 	}
 }
