@@ -18,5 +18,17 @@
             <column name="description" type="varchar(255)"/>
         </createTable>
     </changeSet> -->
-    
+    <changeSet author="obiero" id="29588214-2" >
+        <comment>Create the test table</comment>
+        <createTable tableName="LabM_LabTest">
+            <column autoIncrement="true" name="test_id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="testName" type="varchar(255)"/>
+            <column name="testDescription" type="varchar(255)"/>
+            <column name="labSection" type="int"/>
+            <column name="measureId" type="int"/>
+            <column name="cost" type="double" defaultValue="0.0"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

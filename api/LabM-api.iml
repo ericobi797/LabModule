@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/moduleApplicationContext.xml</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/openmrs/api/openmrs-api/1.8.2/openmrs-api-1.8.2.jar!/applicationContext-service.xml</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/openmrs/web/openmrs-web/1.8.2/openmrs-web-1.8.2.jar!/openmrs-servlet.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
