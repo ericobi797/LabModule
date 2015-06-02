@@ -19,6 +19,7 @@
             <tr>
                 <th width="80">Specimen Name</th>
                 <th width="150">Specimen Description</th>
+                <th width="150">Delete Specimen</th>
             </tr>
             </thead>
             <tbody>
@@ -26,11 +27,29 @@
                 <tr>
                     <td>${specimen.name}</td>
                     <td>${specimen.description}</td>
+                    <td><a href="<c:url value='delete.form?id=${specimen.id}' />">delete</a></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </c:if>
 </div>
+<div>
+    <form role="form" action="<c:url value='update.form' />" method='get'>
 
+        <br>
+        <select name="id" required>
+            <c:forEach var ="sp" items="${allspecimen}">
+                <option value="${sp.id}">${sp.name}</option>
+            </c:forEach>
+        </select><br>
+
+        Specimen Name:<br>
+        <input type="text" placeholder="name" name="uname" size="30" required><br>
+        Drug description:<br>
+        <input type="text" name="description" size="30" required><br>
+        <input type="submit"  value="Update Specimen">
+
+    </form>
+</div>
 <%@ include file="/WEB-INF/template/footer.jsp"%>

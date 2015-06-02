@@ -63,4 +63,10 @@ public class HibernateSpecimenDAO implements SpecimenDAO {
 	public void purgeSpecimen(Specimen specimen){
 		sessionFactory.getCurrentSession().delete(specimen);
 	}
+
+	@Override
+	public Specimen updateSpecimen(Specimen specimen) {
+		sessionFactory.getCurrentSession().update(specimen);
+		return specimen;
+	}
 }

@@ -26,4 +26,5 @@ public interface SpecimenDAO {
 	Specimen getSpecimen(Integer id);
 	Specimen saveSpecimen(Specimen specimen);
 	void purgeSpecimen(Specimen specimen);
+	Specimen updateSpecimen(Specimen specimen);
 }

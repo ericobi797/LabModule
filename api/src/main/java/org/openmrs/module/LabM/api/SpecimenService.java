@@ -41,4 +41,6 @@ public interface SpecimenService extends OpenmrsService {
 	Specimen saveSpecimen(Specimen specimen);
 
 	void purgeSpecimen(Specimen specimen);
+
+	Specimen updateSpecimen(Specimen specimen);
 }

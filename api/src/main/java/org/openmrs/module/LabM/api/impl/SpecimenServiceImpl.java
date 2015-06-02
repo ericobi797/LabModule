@@ -64,4 +64,9 @@ public class SpecimenServiceImpl extends BaseOpenmrsService implements SpecimenS
     public void purgeSpecimen(Specimen specimen){
         dao.purgeSpecimen(specimen);
     }
+
+    @Override
+    public Specimen updateSpecimen(Specimen specimen) {
+        return dao.updateSpecimen(specimen);
+    }
 }

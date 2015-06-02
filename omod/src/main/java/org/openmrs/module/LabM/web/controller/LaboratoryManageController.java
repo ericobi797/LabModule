@@ -61,4 +61,40 @@ public class  LaboratoryManageController {
 			return "redirect:manage.form";
 		}
 	}
+
+	@RequestMapping(value ="/module/LabM/update", method = RequestMethod.GET)
+	public String updateform(HttpSession httpSession,
+							 @RequestParam(value = "id", required = false) int specimenId,
+							 @RequestParam(value = "uname", required = false) String name,
+							 @RequestParam(value = "description", required = false) String description) {
+		try {
+			SpecimenService specimenService = Context.getService(SpecimenService.class);
+			Specimen specimen = new Specimen();
+			specimen.setId(specimenId);
+			specimen.setName(name);
+			specimen.setDescription(description);
+			specimenService.updateSpecimen(specimen);
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
+			return "redirect:manage.form";
+		} catch (Exception ex) {
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+			return "redirect:manage.form";
+		}
+	}
+
+	@RequestMapping(value ="/module/LabM/delete", method = RequestMethod.GET)
+	public String deleteform(HttpSession httpSession,
+							 @RequestParam(value = "id", required = false) int specimenId) {
+		try {
+			SpecimenService specimenService = Context.getService(SpecimenService.class);
+			Specimen specimen = new Specimen();
+			specimen.setId(specimenId);
+			specimenService.purgeSpecimen(specimen);
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Deleted Successfully");
+			return "redirect:manage.form";
+		} catch (Exception ex) {
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+			return "redirect:manage.form";
+		}
+	}
 }
