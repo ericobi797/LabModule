@@ -18,12 +18,14 @@ import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.LabM.Specimen;
 import org.openmrs.module.LabM.api.SpecimenService;
+import org.openmrs.web.WebConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -42,14 +44,21 @@ public class  LaboratoryManageController {
 		model.addAttribute("allspecimen", specimenList);
 	}
 	@RequestMapping("/module/LabM/savespecimen")
-	public String save(@RequestParam(value = "description", required = false) String desc,
+	public String save(HttpSession httpSession,
+					   @RequestParam(value = "description", required = false) String desc,
 					   @RequestParam(value = "sname", required = false) String name
 	){
-		SpecimenService specimenService = Context.getService(SpecimenService.class);
-		Specimen specimen = new Specimen();
-		specimen.setName(name);
-		specimen.setDescription(desc);
-      	specimenService.saveSpecimen(specimen);
-		return "redirect:manage.form";
+		try {
+			SpecimenService specimenService = Context.getService(SpecimenService.class);
+			Specimen specimen = new Specimen();
+			specimen.setName(name);
+			specimen.setDescription(desc);
+			specimenService.saveSpecimen(specimen);
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Registered Successfully");
+			return "redirect:manage.form";
+		} catch (Exception ex){
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+			return "redirect:manage.form";
+		}
 	}
 }

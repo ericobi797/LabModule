@@ -1,6 +1,11 @@
 C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\api\db\hibernate\HibernateSpecimenDAO.java
+C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\api\db\LabTestDAO.java
 C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\api\db\SpecimenDAO.java
 C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\api\SpecimenService.java
+C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\api\impl\LabTestServiceImpl.java
 C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\LaboratoryActivator.java
+C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\LabTest.java
+C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\api\LabTestService.java
 C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\api\impl\SpecimenServiceImpl.java
 C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\Specimen.java
+C:\Users\obiero\Documents\projects\openmrs-dev\LabM\api\src\main\java\org\openmrs\module\LabM\api\db\hibernate\HibernateLabTestDAO.java
