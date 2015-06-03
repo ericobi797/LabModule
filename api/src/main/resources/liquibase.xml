@@ -42,4 +42,28 @@
             <column name="description" type="varchar(255)"/>
         </createTable>
     </changeSet>
+
+    <changeSet author="obiero" id="29588214-4">
+        <comment>Create Measure table</comment>
+        <createTable tableName="labm_measures">
+            <column autoIncrement="true" name="measure_id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="tid" type="int"/>
+            <column name="type" type="int"/>
+            <column name="value" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="obiero" id="29588214-5">
+        <comment>Create Measure table</comment>
+        <createTable tableName="labm_testspecimen">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="tid" type="int"/>
+            <column name="sid" type="int"/>
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
