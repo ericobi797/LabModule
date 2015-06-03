@@ -4,6 +4,7 @@
 <%@ include file="template/localHeader.jsp"%>
 
 <p>Hello ${user.systemId}!</p>
+<p>view test types <a href="<c:url value='test_type.form' />">visit</a></p>
 <p>Register specimen</p>
 <form action="<c:url value='savespecimen.form' />" method="post">
     <label for="sname">Specimen Name:</label>

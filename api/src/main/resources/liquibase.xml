@@ -31,4 +31,15 @@
             <column name="cost" type="double" defaultValue="0.0"/>
         </createTable>
     </changeSet>
+
+    <changeSet author="obiero" id="29588214-3">
+        <comment>Create LabSection table</comment>
+        <createTable tableName="labm_labsection">
+            <column autoIncrement="true" name="section_id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="description" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
