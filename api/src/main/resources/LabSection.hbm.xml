@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.LabM">
+
+    <!--
+        <class name="Specimen"
+            table="${project.parent.artifactId}_Specimen">
+            <id name="id" type="int" column="id" unsaved-value="0">
+                <generator class="native" />
+            </id>
+            <discriminator column="id" insert="false" />
+            <property name="uuid" type="java.lang.String" column="uuid"
+                length="38" unique="true" />
+        </class>
+    -->
+    <class name="LabSection"
+           table="${project.parent.artifactId}_labsection">
+        <id name="id" type="int" column="section_id" unsaved-value="0">
+            <generator class="native" />
+        </id>
+        <discriminator column="section_id" insert="false" />
+        <property name="sectionName" type="java.lang.String" column="name" length="255"/>
+        <property name="sectionDescription" type="java.lang.String" column="description" length="255"/>
+
+    </class>
+</hibernate-mapping>
