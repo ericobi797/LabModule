@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.LabM.LabSection;
 import org.openmrs.module.LabM.api.LabSectionService;
+import org.openmrs.web.WebConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +40,30 @@ public class LabSectionController {
         List<LabSection> listSection = labSectionService.getAllLabSection();
         ModelMap model = new ModelMap();
         model.addAttribute("listsection", listSection);
+        return "redirect:lab_section.form";
+    }
+
+    @RequestMapping(value ="/module/LabM/lsdelete", method = RequestMethod.GET)
+    public String deleteSection(HttpSession httpSession,
+                             @RequestParam(value = "id", required = false) int sectionId){
+        try {
+            LabSectionService labSectionService = Context.getService(LabSectionService.class);
+            LabSection labSection = new LabSection();
+            labSection.setId(sectionId);
+            labSectionService.purgeLabSection(labSection);
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Deleted Successfully");
+            return "redirect:lab_section.form";
+        }catch (Exception ex){
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:lab_section.form";
+        }
+    }
+
+    @RequestMapping(value = "/module/LabM/lsupdate", method = RequestMethod.POST)
+    public String updateSection(HttpSession httpSession,
+                                @RequestParam(value = "id", required = false) int sectionId,
+                                @RequestParam(value = "sname", required = false) String sname,
+                                @RequestParam(value = "sdescription", required = false) String sdescription){
         return "redirect:lab_section.form";
     }
 }
