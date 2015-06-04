@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <!--
+        See http://www.liquibase.org/manual/home#available_database_refactorings
+        for a list of supported elements and attributes
+    -->
+   <!-- <changeSet author="obiero" id="29588214-1">
+        <comment>Create Specimen type table</comment>
+        <createTable tableName="lab_Specimen">
+            <column autoIncrement="true" name="specimen_id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="description" type="varchar(255)"/>
+        </createTable>
+    </changeSet> -->
+    <!--
+    <changeSet author="obiero" id="29588214-2" >
+        <comment>Create the test table</comment>
+        <createTable tableName="LabM_LabTest">
+            <column autoIncrement="true" name="test_id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="testName" type="varchar(255)"/>
+            <column name="testDescription" type="varchar(255)"/>
+            <column name="labSection" type="int"/>
+            <column name="measureId" type="int"/>
+            <column name="cost" type="double" defaultValue="0.0"/>
+        </createTable>
+    </changeSet>
+    -->
+    <changeSet author="obiero" id="29588214-3">
+        <comment>Create LabSection table</comment>
+        <createTable tableName="labm_labsection">
+            <column autoIncrement="true" name="section_id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="description" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="obiero" id="29588214-4">
+        <comment>Create Measure table</comment>
+        <createTable tableName="labm_measures">
+            <column autoIncrement="true" name="measure_id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="tid" type="int"/>
+            <column name="type" type="int"/>
+            <column name="value" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="obiero" id="29588214-5">
+        <comment>Create Measure table</comment>
+        <createTable tableName="labm_testspecimen">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="tid" type="int"/>
+            <column name="sid" type="int"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

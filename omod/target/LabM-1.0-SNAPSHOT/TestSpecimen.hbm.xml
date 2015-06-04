@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.LabM">
+
+    <class name="TestSpecimen"
+           table="LabM_testspecimen">
+        <id name="id" type="int" column="id" unsaved-value="0">
+            <generator class="native" />
+        </id>
+        <discriminator column="id" insert="false" />
+        <property name="tid" type="java.lang.Integer" column="tid" length="255"/>
+        <property name="sid" type="java.lang.Integer" column="sid" length="255"/>
+
+    </class>
+
+</hibernate-mapping>

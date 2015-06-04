@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.LabM">
+
+        <class name="LabTest"
+            table="LabM_LabTest">
+            <id name="id" type="int" column="test_id" unsaved-value="0">
+                <generator class="native" />
+            </id>
+            <discriminator column="test_id" insert="false" />
+            <property name="testName" type="java.lang.String" column="testName"
+                length="255"/>
+            <property name="testDescription" type="java.lang.String" column="testDescription"
+                      length="255"/>
+            <property name="labSection" type="java.lang.Integer" column="labSection"
+                      length="200"/>
+            <property name="measureId" type="java.lang.Integer" column="measureId"
+                      length="200"/>
+            <property name="cost" type="java.lang.Double" column="cost"
+                      length="255"/>
+            <property name="tat" type="java.lang.Integer" column="tat"
+                      length="255"/>
+        </class>
+
+</hibernate-mapping>
