@@ -29,26 +29,26 @@ public class MeasuresServiceImpl extends BaseOpenmrsService implements MeasuresS
 
     @Override
     public List<Measures> getAllMeasures() {
-        return null;
+        return dao.getAllMeasures();
     }
 
     @Override
     public Measures getMeasure(Integer measureId) {
-        return null;
+        return dao.getMeasure(measureId);
     }
 
     @Override
     public Measures saveMeasure(Measures measures) {
-        return null;
+        return dao.saveMeasure(measures);
     }
 
     @Override
     public void purgeMeasure(Measures measures) {
-
+        dao.purgeMeasure(measures);
     }
 
     @Override
     public Measures updateMeasure(Measures measures) {
-        return null;
+        return dao.updateMeasure(measures);
     }
 }

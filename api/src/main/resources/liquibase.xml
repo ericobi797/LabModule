@@ -18,6 +18,7 @@
             <column name="description" type="varchar(255)"/>
         </createTable>
     </changeSet> -->
+    <!--
     <changeSet author="obiero" id="29588214-2" >
         <comment>Create the test table</comment>
         <createTable tableName="LabM_LabTest">
@@ -31,7 +32,7 @@
             <column name="cost" type="double" defaultValue="0.0"/>
         </createTable>
     </changeSet>
-
+    -->
     <changeSet author="obiero" id="29588214-3">
         <comment>Create LabSection table</comment>
         <createTable tableName="labm_labsection">

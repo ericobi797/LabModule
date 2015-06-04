@@ -11,6 +11,7 @@ public class LabSection extends BaseOpenmrsObject implements Serializable {
     private static final long serialVersionUID = 1L;
     private Integer id;
     private String sectionName;
+    private String sectionDescription;
 
     public String getSectionDescription() {
         return sectionDescription;
@@ -28,7 +29,7 @@ public class LabSection extends BaseOpenmrsObject implements Serializable {
         this.sectionName = sectionName;
     }
 
-    private String sectionDescription;
+
     @Override
     public Integer getId() {
         return id;

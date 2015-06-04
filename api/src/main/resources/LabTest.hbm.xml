@@ -21,7 +21,8 @@
                       length="200"/>
             <property name="cost" type="java.lang.Double" column="cost"
                       length="255"/>
-
+            <property name="tat" type="java.lang.Integer" column="tat"
+                      length="255"/>
         </class>
 
 </hibernate-mapping>

@@ -15,6 +15,7 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
     private Integer measureId;
     private Integer labSection;
     private Double cost;
+    private Integer tat;
 
     @Override
     public Integer getId() {
@@ -67,5 +68,11 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
         this.cost = cost;
     }
 
+    public Integer getTat() {
+        return tat;
+    }
 
+    public void setTat(Integer tat) {
+        this.tat = tat;
+    }
 }

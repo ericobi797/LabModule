@@ -5,6 +5,7 @@
 
 <p>Hello ${user.systemId}!</p>
 <p>view test types <a href="<c:url value='test_type.form' />">visit</a></p>
+<p>view lab sections:  <a href="<c:url value='lab_section.form' />">view lab</a></p>
 <p>Register specimen</p>
 <form action="<c:url value='savespecimen.form' />" method="post">
     <label for="sname">Specimen Name:</label>

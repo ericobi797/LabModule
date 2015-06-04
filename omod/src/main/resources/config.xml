@@ -30,6 +30,10 @@
 	<mappingFiles>
 				
 		Specimen.hbm.xml
+		LabSection.hbm.xml
+		LabTest.hbm.xml
+		Measures.hbm.xml
+		TestSpecimen.hbm.xml
 				
 	</mappingFiles>
 
