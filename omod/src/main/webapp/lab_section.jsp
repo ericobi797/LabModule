@@ -118,27 +118,28 @@
                             <td>${ls.sectionDescription}</td>
                             <td>
 
-                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal_blood">Edit</button>
-                                <div id="myModal_blood" class="modal fade">
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal_${ls.id}">Edit</button>
+                                <div id="myModal_${ls.id}" class="modal fade">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">Edit Blood</h4>
+                                                <h4 class="modal-title">Edit Lab Section: ${ls.sectionName}</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form style="margin-left:100px;" class="form-horizontal">
+                                                <form style="margin-left:100px;" class="form-horizontal" action="<c:url value='updatelab.form' />" method="post" >
                                                     <fieldset>
+                                                        <input type="hidden" name="labid" value="${ls.id}">
                                                         <div class="form-group">
-                                                            <label for="specimen" class="col-lg-2 control-label">Name</label>
+                                                            <label for="lsname" class="col-lg-2 control-label">Name</label>
                                                             <div class="col-lg-5">
-                                                                <input class="form-control" id="specimen" placeholder="Blood" type="text">
+                                                                <input class="form-control" id="lsname" name="lsname" placeholder="Blood" type="text" value="${ls.sectionName}">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="textArea" class="col-lg-2 control-label">Description</label>
                                                             <div class="col-lg-5">
-                                                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                                                <textarea class="form-control" rows="3" id="textArea" name="lsdescription"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -152,7 +153,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-sm btn-primary">Save changes</button>
+
                                             </div>
                                         </div>
                                     </div>

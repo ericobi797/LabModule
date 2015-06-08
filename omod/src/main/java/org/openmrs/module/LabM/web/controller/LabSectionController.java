@@ -63,12 +63,24 @@ public class LabSectionController {
             return "redirect:lab_section.form";
         }
     }
-
-    @RequestMapping(value = "/module/LabM/lsupdate", method = RequestMethod.POST)
+/*
+    @RequestMapping(value = "/module/LabM/updatelab", method = RequestMethod.POST)
     public String updateSection(HttpSession httpSession,
-                                @RequestParam(value = "id", required = false) int sectionId,
-                                @RequestParam(value = "sname", required = false) String sname,
-                                @RequestParam(value = "sdescription", required = false) String sdescription){
-        return "redirect:lab_section.form";
-    }
+                                @RequestParam(value = "labid", required = false) int sectionId,
+                                @RequestParam(value = "lsname", required = false) String sname,
+                                @RequestParam(value = "lsdescription", required = false) String sdescription){
+        try{
+            LabSectionService labSectionService = Context.getService(LabSectionService.class);
+            LabSection labSection = new LabSection();
+            labSection.setId(sectionId);
+            labSection.setSectionName(sname);
+            labSection.setSectionDescription(sdescription);
+            labSectionService.updateLabSection(labSection);
+            return "redirect:lab_section.form";
+        }catch (Exception ex){
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:lab_section.form";
+        }
+
+    }*/
 }
