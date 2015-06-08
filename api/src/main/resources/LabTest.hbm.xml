@@ -17,8 +17,6 @@
                       length="255"/>
             <property name="labSection" type="java.lang.Integer" column="labSection"
                       length="200"/>
-            <property name="measureId" type="java.lang.Integer" column="measureId"
-                      length="200"/>
             <property name="cost" type="java.lang.Double" column="cost"
                       length="255"/>
             <property name="tat" type="java.lang.Integer" column="tat"
@@ -26,3 +24,4 @@
         </class>
 
 </hibernate-mapping>
+

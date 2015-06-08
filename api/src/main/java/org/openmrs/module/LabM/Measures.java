@@ -10,7 +10,6 @@ import java.io.Serializable;
 public class Measures extends BaseOpenmrsObject implements Serializable {
     private static final long serialVersionUID = 1L;
     private Integer id;
-    private Integer tid;
     private Integer type;
     private String value;
 
@@ -22,14 +21,6 @@ public class Measures extends BaseOpenmrsObject implements Serializable {
     @Override
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getTid() {
-        return tid;
-    }
-
-    public void setTid(Integer tid) {
-        this.tid = tid;
     }
 
     public Integer getType() {

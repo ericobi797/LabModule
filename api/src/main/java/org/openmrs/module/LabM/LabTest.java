@@ -12,7 +12,6 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
     private Integer id;
     private String testName;
     private String testDescription;
-    private Integer measureId;
     private Integer labSection;
     private Double cost;
     private Integer tat;
@@ -42,14 +41,6 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
 
     public void setTestDescription(String testDescription) {
         this.testDescription = testDescription;
-    }
-
-    public Integer getMeasureId() {
-        return measureId;
-    }
-
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
     }
 
     public Integer getLabSection() {

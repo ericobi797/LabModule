@@ -32,7 +32,7 @@
             <column name="cost" type="double" defaultValue="0.0"/>
         </createTable>
     </changeSet>
-    -->
+
     <changeSet author="obiero" id="29588214-3">
         <comment>Create LabSection table</comment>
         <createTable tableName="labm_labsection">
@@ -55,7 +55,7 @@
             <column name="value" type="varchar(255)"/>
         </createTable>
     </changeSet>
-
+-->
     <changeSet author="obiero" id="29588214-5">
         <comment>Create Measure table</comment>
         <createTable tableName="labm_testspecimen">

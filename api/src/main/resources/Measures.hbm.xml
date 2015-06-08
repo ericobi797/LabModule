@@ -11,7 +11,6 @@
             <generator class="native" />
         </id>
         <discriminator column="measure_id" insert="false" />
-        <property name="tid" type="java.lang.Integer" column="tid" length="255"/>
         <property name="type" type="java.lang.Integer" column="type" length="255"/>
         <property name="value" type="java.lang.String" column="value"
                   length="255"/>
