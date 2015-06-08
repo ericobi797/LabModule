@@ -32,15 +32,20 @@ public class LabSectionController {
     @RequestMapping(value ="/module/LabM/savelab", method = RequestMethod.POST)
     public String saveLabSection(HttpSession httpSession, @RequestParam(value = "lname", required = false) String labName,
                                  @RequestParam(value = "ldescription", required = false) String labDescription){
-        LabSectionService labSectionService = Context.getService(LabSectionService.class);
-        LabSection labSection = new LabSection();
-        labSection.setSectionDescription(labDescription);
-        labSection.setSectionName(labName);
-        labSectionService.saveLabSection(labSection);
-        List<LabSection> listSection = labSectionService.getAllLabSection();
-        ModelMap model = new ModelMap();
-        model.addAttribute("listsection", listSection);
-        return "redirect:lab_section.form";
+        try{
+            LabSectionService labSectionService = Context.getService(LabSectionService.class);
+            LabSection labSection = new LabSection();
+            labSection.setSectionDescription(labDescription);
+            labSection.setSectionName(labName);
+            labSectionService.saveLabSection(labSection);
+            List<LabSection> listSection = labSectionService.getAllLabSection();
+            ModelMap model = new ModelMap();
+            model.addAttribute("listsection", listSection);
+            return "redirect:lab_section.form";
+        }catch (Exception ex){
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:lab_section.form";
+        }
     }
 
     @RequestMapping(value ="/module/LabM/lsdelete", method = RequestMethod.GET)
