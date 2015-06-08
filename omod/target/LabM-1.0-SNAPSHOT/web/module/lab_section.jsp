@@ -12,6 +12,21 @@
 <head>
     <title></title>
     <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.css"/>
+    <openmrs:htmlInclude file="/moduleResources/LabM/dataTables.bootstrap.js"/>
+    <openmrs:htmlInclude file="/moduleResources/LabM/jquery-1.11.1.min.js"/>
+    <openmrs:htmlInclude file="/moduleResources/LabM/jquery.dataTables.min.js"/>
+    <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.js"/>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').dataTable();
+        } );
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#myModal").modal('show');
+        });
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -87,7 +102,7 @@
             </div>
             <div class="panel-body">
                 <c:if test="${!empty listsection}">
-                <table class="table table-striped table-hover ">
+                <table id="example"  class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -101,7 +116,49 @@
                         <tr>
                             <td>${ls.sectionName}</td>
                             <td>${ls.sectionDescription}</td>
-                            <td><button type="reset" class="btn btn-default btn-xs">Edit</button></td>
+                            <td>
+
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal_blood">Edit</button>
+                                <div id="myModal_blood" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Edit Blood</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form style="margin-left:100px;" class="form-horizontal">
+                                                    <fieldset>
+                                                        <div class="form-group">
+                                                            <label for="specimen" class="col-lg-2 control-label">Name</label>
+                                                            <div class="col-lg-5">
+                                                                <input class="form-control" id="specimen" placeholder="Blood" type="text">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="textArea" class="col-lg-2 control-label">Description</label>
+                                                            <div class="col-lg-5">
+                                                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-10 col-lg-offset-2">
+                                                                <!-- <button type="reset" class="btn btn-default">Cancel</button> -->
+                                                                <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-sm btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
                             <td><button type="submit" class="btn btn-danger btn-xs"><a href="<c:url value='lsdelete.form?id=${ls.id}' />">delete</a></button></td>
                         </tr>
                     </c:forEach>

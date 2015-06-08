@@ -24,6 +24,10 @@
         <discriminator column="section_id" insert="false" />
         <property name="sectionName" type="java.lang.String" column="name" length="255"/>
         <property name="sectionDescription" type="java.lang.String" column="description" length="255"/>
+        <set name="labTests" inverse="true" cascade="all">
+            <key column="section_id" not-null="true"/>
+            <one-to-many class="LabTest"/>
+        </set>
 
     </class>
 </hibernate-mapping>
