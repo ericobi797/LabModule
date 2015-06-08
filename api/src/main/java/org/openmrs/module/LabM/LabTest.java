@@ -12,9 +12,11 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
     private Integer id;
     private String testName;
     private String testDescription;
-    private Integer labSection;
+    //private Integer labSection;
     private Double cost;
     private Integer tat;
+    private Measures measures;
+    private LabSection labSection;
 
     @Override
     public Integer getId() {
@@ -43,13 +45,6 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
         this.testDescription = testDescription;
     }
 
-    public Integer getLabSection() {
-        return labSection;
-    }
-
-    public void setLabSection(Integer labSection) {
-        this.labSection = labSection;
-    }
 
     public Double getCost() {
         return cost;
@@ -65,5 +60,21 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
 
     public void setTat(Integer tat) {
         this.tat = tat;
+    }
+
+    public Measures getMeasures() {
+        return measures;
+    }
+
+    public void setMeasures(Measures measures) {
+        this.measures = measures;
+    }
+
+    public LabSection getLabSection() {
+        return labSection;
+    }
+
+    public void setLabSection(LabSection labSection) {
+        this.labSection = labSection;
     }
 }

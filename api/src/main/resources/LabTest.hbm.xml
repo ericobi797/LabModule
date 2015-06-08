@@ -8,9 +8,9 @@
         <class name="LabTest"
             table="${project.parent.artifactId}_LabTest">
             <id name="id" type="int" column="test_id" unsaved-value="0">
-                <generator class="native" />
+                <generator class="increment" />
             </id>
-            <discriminator column="test_id" insert="false" />
+            <!--<discriminator column="test_id" insert="false" />-->
             <property name="testName" type="java.lang.String" column="testName"
                 length="255"/>
             <property name="testDescription" type="java.lang.String" column="testDescription"
@@ -21,6 +21,7 @@
                       length="255"/>
             <property name="tat" type="java.lang.Integer" column="tat"
                       length="255"/>
+            <one-to-one name="measures" cascade="all"></one-to-one>
         </class>
 
 </hibernate-mapping>

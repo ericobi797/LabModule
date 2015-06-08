@@ -12,6 +12,7 @@ public class Measures extends BaseOpenmrsObject implements Serializable {
     private Integer id;
     private Integer type;
     private String value;
+    private LabTest labTest;
 
     @Override
     public Integer getId() {
@@ -37,5 +38,13 @@ public class Measures extends BaseOpenmrsObject implements Serializable {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public LabTest getLabTest() {
+        return labTest;
+    }
+
+    public void setLabTest(LabTest labTest) {
+        this.labTest = labTest;
     }
 }
