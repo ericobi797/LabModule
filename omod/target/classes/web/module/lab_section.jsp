@@ -12,20 +12,19 @@
 <head>
     <title></title>
     <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.css"/>
-    <openmrs:htmlInclude file="/moduleResources/LabM/dataTables.bootstrap.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery-1.11.1.min.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery.dataTables.min.js"/>
+    <openmrs:htmlInclude file="/moduleResources/LabM/dataTables.bootstrap.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.js"/>
 
     <script type="text/javascript">
         $(document).ready(function() {
             $('#example').dataTable();
+
+            $(document).ready(function(){
+                $("#myModal").modal('show');
+            });
         } );
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#myModal").modal('show');
-        });
     </script>
 </head>
 <body>
@@ -108,7 +107,7 @@
                         <th>#</th>
                         <th>Lab Name</th>
                         <th>Lab Description</th>
-                        <th colspan="2">Action</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -124,14 +123,14 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">Edit ${ls.sectionName}</h4>
+                                                <h4 class="modal-title">Edit Lab Section: ${ls.sectionName}</h4>
                                             </div>
                                             <div class="modal-body">
                                                 <form style="margin-left:100px;" class="form-horizontal" action="<c:url value='updatelab.form' />" method="post" >
                                                     <fieldset>
                                                         <input type="hidden" name="labid" value="${ls.id}">
                                                         <div class="form-group">
-                                                            <label for="lsname" class="col-lg-2 control-label">Lab Section Name</label>
+                                                            <label for="lsname" class="col-lg-2 control-label">Name</label>
                                                             <div class="col-lg-5">
                                                                 <input class="form-control" id="lsname" name="lsname" placeholder="Blood" type="text" value="${ls.sectionName}">
                                                             </div>

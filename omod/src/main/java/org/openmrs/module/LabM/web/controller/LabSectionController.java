@@ -63,7 +63,7 @@ public class LabSectionController {
             return "redirect:lab_section.form";
         }
     }
-/*
+
     @RequestMapping(value = "/module/LabM/updatelab", method = RequestMethod.POST)
     public String updateSection(HttpSession httpSession,
                                 @RequestParam(value = "labid", required = false) int sectionId,
@@ -82,5 +82,5 @@ public class LabSectionController {
             return "redirect:lab_section.form";
         }
 
-    }*/
+    }
 }

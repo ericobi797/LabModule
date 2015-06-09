@@ -12,20 +12,19 @@
 <head>
     <title></title>
     <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.css"/>
-    <openmrs:htmlInclude file="/moduleResources/LabM/dataTables.bootstrap.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery-1.11.1.min.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery.dataTables.min.js"/>
+    <openmrs:htmlInclude file="/moduleResources/LabM/dataTables.bootstrap.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.js"/>
 
     <script type="text/javascript">
         $(document).ready(function() {
             $('#example').dataTable();
+
+            $(document).ready(function(){
+                $("#myModal").modal('show');
+            });
         } );
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#myModal").modal('show');
-        });
     </script>
 </head>
 <body>
@@ -108,7 +107,7 @@
                         <th>#</th>
                         <th>Lab Name</th>
                         <th>Lab Description</th>
-                        <th colspan="2">Action</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>

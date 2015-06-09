@@ -57,13 +57,29 @@
     </changeSet>
 -->
     <changeSet author="obiero" id="29588214-5">
-        <comment>Create Measure table</comment>
+        <comment>Create TestSpecimen table</comment>
         <createTable tableName="labm_testspecimen">
             <column autoIncrement="true" name="id" type="int">
                 <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="tid" type="int"/>
             <column name="sid" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="obiero" id="29588214-6">
+        <comment>Create Results table</comment>
+        <createTable tableName="labm_results">
+            <column autoIncrement="true" name="result_id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="patient_id" type="int"/>
+            <column name="dateTaken" type="varchar(255)"/>
+            <column name="result" type="varchar(255)"/>
+            <column name="status" type="int"/>
+            <column name="test" type="varchar(255)"/>
+            <column name="resultDate" type="varchar(255)"/>
+            <column name="specimen_id" type="int"/>
         </createTable>
     </changeSet>
 
