@@ -60,20 +60,20 @@
                 <h3 class="panel-title">New Test Types</h3>
             </div>
             <div class="panel-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="<c:url value='savetype.form' />" method="post">
                     <fieldset>
                         <div class="form-group">
-                            <label class="col-lg-2 control-label">Name</label>
+                            <label class="col-lg-2 control-label" for="tname">Test Name</label>
                             <div class="col-lg-5">
-                                <input class="form-control" placeholder="" type="text">
+                                <input class="form-control" id="tname" placeholder="" name="tname" type="text">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="select" class="col-lg-2 control-label">Lab Section</label>
+                            <label for="lsname" class="col-lg-2 control-label">Lab Section</label>
                             <div class="col-lg-5">
-                                <select class="form-control" id="select">
+                                <select class="form-control" id="lsname" name="lsname">
                                     <c:forEach items="${section}" var="ls">
-                                    <option>${ls.sectionName}</option>
+                                    <option value="${ls.id}">${ls.sectionName}</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -81,23 +81,23 @@
                         <div class="form-group">
                             <label for="textArea" class="col-lg-2 control-label">Description</label>
                             <div class="col-lg-5">
-                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                <textarea class="form-control" rows="3" id="textArea" name="description"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="select" class="col-lg-2 control-label">Measures</label>
+                            <label for="measure" class="col-lg-2 control-label">Measures</label>
                             <div class="col-lg-4">
-                                <select class="form-control" id="selectField">
-                                    <option value="option1">Numeric Values</option>
-                                    <option value="option2">Alpha Numeric Values</option>
+                                <select class="form-control" id="selectField" name="measure" id="measure">
+                                    <option value="1">Numeric Values</option>
+                                    <option value="2">Alpha Numeric Values</option>
                                 </select>
                             </div>
                             <div id="option1" class="col-lg-4 box">
                                 <div class="col-lg-6">
-                                    <input class="form-control" type="text" placeholder="one">
+                                    <input class="form-control" type="text" name="min" placeholder="Minimum">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input class="form-control" type="text" placeholder="one">
+                                    <input class="form-control" type="text" name="max" placeholder="Maximum">
                                 </div>
                             </div>
                             <div id="option2" class="col-lg-4 box">
@@ -116,13 +116,13 @@
                         </div>
                         <button style="margin-left:255px; margin-bottom:10px;" class="btn btn-xs btn-default add_field_button">Add Another</button>
                         <div class="form-group">
-                            <label for="select" class="col-lg-2 control-label">Compatible Specimen</label>
+                            <label class="col-lg-2 control-label">Compatible Specimen</label>
                             <div class="col-lg-5">
                                 <table class="table">
                                     <c:set var="count" value="${0}"/>
                                     <tr>
                                     <c:forEach items="${specimen}" var="sp">
-                                        <td><input type="checkbox">${sp.name}</td>
+                                        <td><input type="checkbox" name="specimen" value="${sp.id}">${sp.name}</td>
                                         <c:set var="count" value="${count + 1}"/>
                                         <c:if test="${count == 3}">
                                             </tr><tr>
@@ -134,12 +134,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="specimen" class="col-lg-2 control-label">Cost</label>
+                            <label for="cost" class="col-lg-2 control-label">Cost</label>
                             <div class="col-lg-3">
-                                <input class="form-control" id="specimen" placeholder="Shillings" type="text">
+                                <input class="form-control" id="cost" name="cost" placeholder="Shillings" type="text">
                             </div>
                             <div class="col-lg-3">
-                                <input class="form-control"  placeholder="Cents" type="text">
+                                <input class="form-control"  placeholder="Cents" name="costc" type="text">
                             </div>
                         </div>
                         <div class="form-group">

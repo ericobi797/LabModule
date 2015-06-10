@@ -81,7 +81,7 @@
                         <div class="form-group">
                             <label for="textArea" class="col-lg-2 control-label">Description</label>
                             <div class="col-lg-5">
-                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                <textarea class="form-control" rows="3" id="textArea" name="description"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -122,7 +122,7 @@
                                     <c:set var="count" value="${0}"/>
                                     <tr>
                                     <c:forEach items="${specimen}" var="sp">
-                                        <td><input type="checkbox" name="specimen">${sp.name}</td>
+                                        <td><input type="checkbox" name="specimen" value="${sp.id}">${sp.name}</td>
                                         <c:set var="count" value="${count + 1}"/>
                                         <c:if test="${count == 3}">
                                             </tr><tr>
