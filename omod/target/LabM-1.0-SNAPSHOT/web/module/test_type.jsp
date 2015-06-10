@@ -72,11 +72,9 @@
                             <label for="select" class="col-lg-2 control-label">Lab Section</label>
                             <div class="col-lg-5">
                                 <select class="form-control" id="select">
-                                    <option>Blood Chemistry</option>
-                                    <option>Urine Analysis</option>
-                                    <option>Serology</option>
-                                    <option>Hematology</option>
-                                    <option>Bacteriology</option>
+                                    <c:forEach items="${section}" var="ls">
+                                    <option>${ls.sectionName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -120,21 +118,17 @@
                         <div class="form-group">
                             <label for="select" class="col-lg-2 control-label">Compatible Specimen</label>
                             <div class="col-lg-5">
-                                <table class="table table-bordered">
+                                <table class="table">
+                                    <c:set var="count" value="${0}"/>
                                     <tr>
-                                        <td><input type="checkbox">Blood</td>
-                                        <td><input type="checkbox">Smear</td>
-                                        <td><input type="checkbox">Bone Marrow</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox">Tissue</td>
-                                        <td><input type="checkbox">Stool</td>
-                                        <td><input type="checkbox">Urine</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox">Skin</td>
-                                        <td><input type="checkbox">Swab</td>
-                                        <td></td>
+                                    <c:forEach items="${specimen}" var="sp">
+                                        <td><input type="checkbox">${sp.name}</td>
+                                        <c:set var="count" value="${count + 1}"/>
+                                        <c:if test="${count == 3}">
+                                            </tr><tr>
+                                            <c:set var="count" value="${0}"/>
+                                        </c:if>
+                                    </c:forEach>
                                     </tr>
                                 </table>
                             </div>
