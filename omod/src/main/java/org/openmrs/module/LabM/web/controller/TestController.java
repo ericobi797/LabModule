@@ -58,12 +58,14 @@ public class TestController {
 
     @RequestMapping(value="/module/LabM/updatetest")
     public String updateTest(HttpSession httpSession, @RequestParam(value = "tname", required = false) String tname,
+                             @RequestParam(value = "testid", required = false) int testid,
                              @RequestParam(value="tdescription", required = false) String tdescription,
                              @RequestParam(value = "tcost", required = false) double tcost,
                              @RequestParam(value = "tat", required = false) int tat,
                              @RequestParam(value = "lsname", required = false) int lsname){
         try{
             LabTest labTest = new LabTest();
+            labTest.setId(testid);
             labTest.setTestName(tname);
             labTest.setTestDescription(tdescription);
             labTest.setCost(tcost);
