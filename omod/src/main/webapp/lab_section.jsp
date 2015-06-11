@@ -104,10 +104,10 @@
                 <table id="example"  class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>#</th>
                         <th>Lab Name</th>
                         <th>Lab Description</th>
-                        <th>Action</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
