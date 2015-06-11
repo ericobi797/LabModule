@@ -2,10 +2,7 @@ package org.openmrs.module.LabM.web.controller;
 
 import org.openmrs.api.context.Context;
 import org.openmrs.module.LabM.*;
-import org.openmrs.module.LabM.api.LabSectionService;
-import org.openmrs.module.LabM.api.MeasuresService;
-import org.openmrs.module.LabM.api.SpecimenService;
-import org.openmrs.module.LabM.api.TestSpecimenService;
+import org.openmrs.module.LabM.api.*;
 import org.openmrs.web.WebConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,6 +24,9 @@ public class TestTypeController {
         List<LabSection> listSection = labSectionService.getAllLabSection();
         SpecimenService specimenService = Context.getService(SpecimenService.class);
         List<Specimen> specimenList = specimenService.getAllSpecimen();
+        LabTestService labTestService = Context.getService(LabTestService.class);
+        List<LabTest> testlist = labTestService.getAllLabTest();
+        model.addAttribute("testlist", testlist);
         model.addAttribute("section", listSection);
         model.addAttribute("specimen", specimenList);
     }
@@ -82,10 +82,10 @@ public class TestTypeController {
                 testSpecimen.setSpecimen(specimen);
                 testSpecimenService.saveTestSpecimen(testSpecimen);
             }
-            return "redirect:lab_section.form";
+            return "redirect:test_type.form";
         }catch (Exception ex){
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
-            return "redirect:lab_section.form";
+            return "redirect:test_type.form";
         }
 
     }

@@ -165,13 +165,16 @@
             <div class="col-md-4">
                 <table class="table table-hover" cellspacing="0">
                     <thead>
-                    <tr><td>Test</td><td>Test</td></tr>
+                    <tr><th>Test Name</th><th>TAT</th><th>Delete</th></tr>
                     </thead>
                     <tbody>
-                    <tr><td>Test</td><td>Test</td></tr>
-                    <tr><td>Test</td><td>Test</td></tr>
-                    <tr><td>Test</td><td>Test</td></tr>
-                    <tr><td>Test</td><td>Test</td></tr>
+                    <c:forEach items="${testlist}" var="tl">
+                        <tr>
+                            <td>${tl.testName}</td>
+                            <td>${tl.tat}</td>
+                            <td><a href="<c:url value='deletetest.form?id=${tl.id}' />">delete</a></td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
 
