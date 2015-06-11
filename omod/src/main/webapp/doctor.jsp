@@ -85,7 +85,7 @@
                         <tbody>
                         <c:forEach items="${patientlist}" var="pl">
                             <tr>
-                                <td>${pl.patientId}</td>
+                                <td>${pl.identifiers}</td>
                                 <td>${pl.personName}</td>
                                 <td>${pl.age}</td>
                                 <td>${pl.gender}</td>

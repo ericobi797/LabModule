@@ -16,7 +16,7 @@ public class Results extends BaseOpenmrsObject implements Serializable {
     private String result;
     private Integer status;
     private Integer specimenId;
-    private String test;
+    private Integer test;
     private String resultDate;
 
     @Override
@@ -69,11 +69,11 @@ public class Results extends BaseOpenmrsObject implements Serializable {
         this.specimenId = specimenId;
     }
 
-    public String getTest() {
+    public Integer getTest() {
         return test;
     }
 
-    public void setTest(String test) {
+    public void setTest(Integer test) {
         this.test = test;
     }
 
@@ -84,4 +84,6 @@ public class Results extends BaseOpenmrsObject implements Serializable {
     public void setResultDate(String resultDate) {
         this.resultDate = resultDate;
     }
+
+
 }

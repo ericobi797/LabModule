@@ -6,20 +6,22 @@
 <hibernate-mapping package="org.openmrs.module.LabM">
 
     <class name="Results"
-           table="LabM_results">
+           table="${project.parent.artifactId}_results">
         <id name="id" type="int" column="result_id" unsaved-value="0">
             <generator class="native">
             </generator>
         </id>
-        <!--<discriminator column="measure_id" insert="false" />-->
+        <discriminator column="result_id" insert="false" />
         <property name="patientId" type="java.lang.Integer" column="patient_id" length="255"/>
         <property name="dateTaken" type="java.lang.String" column="dateTaken"
                   length="255"/>
         <property name="result" type="java.lang.String" column="result" length="255"/>
         <property name="status" type="java.lang.Integer" column="status" length="255"/>
-        <property name="specimenId" type="java.lang.Integer" column="specimen_id" length="255"/>
-        <property name="test" type="java.lang.String" column="test" length="255"/>
+        <!--<property name="specimenId" type="java.lang.Integer" column="specimen_id" length="255"/>-->
+        <!--<property name="test" type="java.lang.Integer" column="test" length="255"/>-->
         <property name="resultDate" type="java.lang.String" column="resultDate" length="255"/>
+        <many-to-one name="specimen" class="Specimen" column="specimen_id" not-null="true"/>
+        <many-to-one name="labTest" class="LabTest" column="test" not-null="true"/>
 
     </class>
 

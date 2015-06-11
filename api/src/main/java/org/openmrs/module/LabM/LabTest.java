@@ -20,6 +20,8 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
     private LabSection labSection;
     private Set<TestSpecimen> testSpecimenSet;
 
+
+
     @Override
     public Integer getId() {
         return id;
@@ -87,4 +89,5 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
     public void setTestSpecimenSet(Set<TestSpecimen> testSpecimenSet) {
         this.testSpecimenSet = testSpecimenSet;
     }
+
 }

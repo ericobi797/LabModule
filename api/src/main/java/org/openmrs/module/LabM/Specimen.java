@@ -64,4 +64,6 @@ public class Specimen extends BaseOpenmrsObject implements Serializable {
 	public void setTestSpecimenSet(Set<TestSpecimen> testSpecimenSet) {
 		this.testSpecimenSet = testSpecimenSet;
 	}
+
+
 }
