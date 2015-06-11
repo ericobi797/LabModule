@@ -107,37 +107,38 @@
                                                         <fieldset>
                                                             <input type="hidden" name="labid" value="${tl.id}">
                                                             <div class="form-group">
-                                                                <label for="tname" class="col-lg-2 control-label">Name</label>
-                                                                <div class="col-lg-5">
+                                                                <label for="tname" class="col-lg-3 control-label">Name</label>
+                                                                <div class="col-lg-6">
                                                                     <input class="form-control" id="tname" name="tname" placeholder="${tl.testName}" type="text">
                                                                 </div>
                                                             </div>
                                                             <br/><br/>
                                                             <div class="form-group">
-                                                                <label for="textArea" class="col-lg-2 control-label">Description</label>
-                                                                <div class="col-lg-5">
+                                                                <label for="textArea" class="col-lg-3 control-label">Description</label>
+                                                                <div class="col-lg-6">
                                                                     <textarea class="form-control" rows="3" id="textArea" name="tdescription"></textarea>
                                                                 </div>
                                                             </div>
+                                                            <br/><br/>
                                                             <div class="form-group">
-                                                                <label for="tcost" class="col-lg-2 control-label">Cost</label>
-                                                                <div class="col-lg-5">
+                                                                <label for="tcost" class="col-lg-3 control-label">Cost</label>
+                                                                <div class="col-lg-6">
                                                                     <input class="form-control" id="tcost" name="tcost" type="number">
                                                                 </div>
                                                             </div>
                                                             <br/><br/>
 
                                                             <div class="form-group">
-                                                                <label for="tat" class="col-lg-2 control-label">TAT</label>
-                                                                <div class="col-lg-5">
+                                                                <label for="tat" class="col-lg-3 control-label">TAT</label>
+                                                                <div class="col-lg-6">
                                                                     <input class="form-control" id="tat" name="tat" type="number">
                                                                 </div>
                                                             </div>
                                                             <br/><br/>
 
                                                             <div class="form-group">
-                                                                <label for="tcost" class="col-lg-2 control-label">Name</label>
-                                                                <div class="col-lg-5">
+                                                                <label for="tcost" class="col-lg-3 control-label">Name</label>
+                                                                <div class="col-lg-6">
                                                                     <select class="form-control" id="lsname" name="lsname">
                                                                         <c:forEach items="${section}" var="ls">
                                                                             <option value="${ls.id}">${ls.sectionName}</option>
