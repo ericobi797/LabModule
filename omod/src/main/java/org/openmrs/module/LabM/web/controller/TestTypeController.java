@@ -1,10 +1,12 @@
 package org.openmrs.module.LabM.web.controller;
 
 import org.openmrs.api.context.Context;
-import org.openmrs.module.LabM.LabSection;
-import org.openmrs.module.LabM.Specimen;
+import org.openmrs.module.LabM.*;
 import org.openmrs.module.LabM.api.LabSectionService;
+import org.openmrs.module.LabM.api.MeasuresService;
 import org.openmrs.module.LabM.api.SpecimenService;
+import org.openmrs.module.LabM.api.TestSpecimenService;
+import org.openmrs.web.WebConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,23 +33,60 @@ public class TestTypeController {
 
     @RequestMapping(value ="/module/LabM/savetype", method=RequestMethod.POST)
     public String saveTestType(HttpSession httpSession, final HttpServletRequest request){
-        int im = 0;
+        String values;
+        int measureType;
         String tname = request.getParameter("tname");
-        String lsname = request.getParameter("lsname");
+        int lsname = Integer.parseInt(request.getParameter("lsname"));
         String description = request.getParameter("description");
         String measure = request.getParameter("measure");
-        String cost = request.getParameter("cost");
-        if(measure == "option1"){
+        double cost = Double.parseDouble(request.getParameter("cost"));
+        int tat = Integer.parseInt(request.getParameter("tat"));
+        if(measure.equals("option1")){
             String min = request.getParameter("min");
             String max = request.getParameter("max");
-            im = 1;
+            values = min+","+max;
+            measureType = 1;
         }else{
+            measureType = 0;
             String high = request.getParameter("high");
             String low = request.getParameter("low");
             String normal = request.getParameter("normal");
+            values = high+","+low+","+normal;
         }
         String sp = request.getParameter("splist");
         String[] spList = sp.split(",");
-        return "redirect:lab_section.form";
+        try{
+            LabTest labTest = new LabTest();
+            labTest.setTestName(tname);
+            labTest.setTestDescription(description);
+            labTest.setCost(cost);
+            LabSectionService labSectionService = Context.getService(LabSectionService.class);
+            LabSection labSection = labSectionService.getLabSection(lsname);
+            labTest.setLabSection(labSection);
+            labTest.setTat(tat);
+            Measures measures = new Measures();
+            measures.setType(measureType);
+            measures.setValue(values);
+            measures.setLabTest(labTest);
+            MeasuresService measuresService = Context.getService(MeasuresService.class);
+            measuresService.saveMeasure(measures);
+
+
+            for(String spl: spList){
+                TestSpecimen testSpecimen = new TestSpecimen();
+                TestSpecimenService testSpecimenService = Context.getService(TestSpecimenService.class);
+                SpecimenService specimenService = Context.getService(SpecimenService.class);
+                int sid = Integer.parseInt(spl);
+                testSpecimen.setLabTest(labTest);
+                Specimen specimen = specimenService.getSpecimen(sid);
+                testSpecimen.setSpecimen(specimen);
+                testSpecimenService.saveTestSpecimen(testSpecimen);
+            }
+            return "redirect:lab_section.form";
+        }catch (Exception ex){
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:lab_section.form";
+        }
+
     }
 }

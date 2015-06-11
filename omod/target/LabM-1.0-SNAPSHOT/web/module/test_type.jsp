@@ -143,6 +143,14 @@
                                     <input class="form-control"  placeholder="Cents" name="costc" type="text">
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="tat" class="col-lg-3 control-label">Turnaround Time</label>
+                                <div class="col-lg-4">
+                                    <input class="form-control" id="tat" name="tat" placeholder="TAT" type="text">
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="col-lg-10 col-lg-offset-3">
                                     <!-- <button type="reset" class="btn btn-default">Cancel</button> -->
