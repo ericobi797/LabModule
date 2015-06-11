@@ -13,6 +13,8 @@ public class TestSpecimen extends BaseOpenmrsObject implements Serializable{
     private Integer id;
     private Integer tid;
     private Integer sid;
+    private LabTest labTest;
+    private Specimen specimen;
 
     @Override
     public Integer getId() {
@@ -38,5 +40,21 @@ public class TestSpecimen extends BaseOpenmrsObject implements Serializable{
 
     public void setSid(Integer sid) {
         this.sid = sid;
+    }
+
+    public LabTest getLabTest() {
+        return labTest;
+    }
+
+    public void setLabTest(LabTest labTest) {
+        this.labTest = labTest;
+    }
+
+    public Specimen getSpecimen() {
+        return specimen;
+    }
+
+    public void setSpecimen(Specimen specimen) {
+        this.specimen = specimen;
     }
 }

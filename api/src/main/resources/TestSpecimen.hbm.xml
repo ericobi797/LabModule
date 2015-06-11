@@ -11,9 +11,8 @@
             <generator class="native" />
         </id>
         <discriminator column="id" insert="false" />
-        <property name="tid" type="java.lang.Integer" column="tid" length="255"/>
-        <property name="sid" type="java.lang.Integer" column="sid" length="255"/>
-
+        <many-to-one name="tid" class="LabTest" column="tid" not-null="true"/>
+        <many-to-one name="sid" class="Specimen" column="sid" not-null="true"/>
     </class>
 
 </hibernate-mapping>

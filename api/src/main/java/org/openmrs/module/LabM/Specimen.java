@@ -14,6 +14,8 @@
 package org.openmrs.module.LabM;
 
 import java.io.Serializable;
+import java.util.Set;
+
 import org.openmrs.BaseOpenmrsObject;
 import org.openmrs.BaseOpenmrsMetadata;
 
@@ -27,6 +29,7 @@ public class Specimen extends BaseOpenmrsObject implements Serializable {
 	private Integer id;
 	private String name;
 	private String description;
+	private Set<TestSpecimen> testSpecimenSet;
 	
 	@Override
 	public Integer getId() {
@@ -53,5 +56,12 @@ public class Specimen extends BaseOpenmrsObject implements Serializable {
 	public void setDescription(String description){
 		this.description = description;
 	}
-	
+
+	public Set<TestSpecimen> getTestSpecimenSet() {
+		return testSpecimenSet;
+	}
+
+	public void setTestSpecimenSet(Set<TestSpecimen> testSpecimenSet) {
+		this.testSpecimenSet = testSpecimenSet;
+	}
 }

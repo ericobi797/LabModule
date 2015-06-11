@@ -3,6 +3,7 @@ package org.openmrs.module.LabM;
 import org.openmrs.BaseOpenmrsObject;
 
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by obiero on 6/2/2015.
@@ -17,6 +18,7 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
     private Integer tat;
     private Measures measures;
     private LabSection labSection;
+    private Set<TestSpecimen> testSpecimenSet;
 
     @Override
     public Integer getId() {
@@ -76,5 +78,13 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
 
     public void setLabSection(LabSection labSection) {
         this.labSection = labSection;
+    }
+
+    public Set<TestSpecimen> getTestSpecimenSet() {
+        return testSpecimenSet;
+    }
+
+    public void setTestSpecimenSet(Set<TestSpecimen> testSpecimenSet) {
+        this.testSpecimenSet = testSpecimenSet;
     }
 }

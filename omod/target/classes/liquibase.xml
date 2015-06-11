@@ -47,7 +47,7 @@
     <changeSet author="obiero" id="29588214-4">
         <comment>Create Measure table</comment>
         <createTable tableName="labm_measures">
-            <column autoIncrement="true" name="measure_id" type="int">
+            <column autoIncrement="false" name="measure_id" type="int">
                 <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="tid" type="int"/>
