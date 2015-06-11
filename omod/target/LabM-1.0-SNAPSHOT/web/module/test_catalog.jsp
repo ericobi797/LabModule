@@ -105,7 +105,7 @@
                                                 <div class="modal-body">
                                                     <form style="margin-left:100px;" class="form-horizontal" action="<c:url value='updatetest.form' />" method="post" >
                                                         <fieldset>
-                                                            <input type="hidden" name="labid" value="${tl.id}">
+                                                            <input type="hidden" name="testid" value="${tl.id}">
                                                             <div class="form-group">
                                                                 <label for="tname" class="col-lg-3 control-label">Name</label>
                                                                 <div class="col-lg-6">

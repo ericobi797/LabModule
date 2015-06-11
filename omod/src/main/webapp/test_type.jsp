@@ -131,7 +131,7 @@
                                         </c:forEach>
                                     </tr>
                                     </table>
-                                    <input type="text" value="" id="tags" name="splist">
+                                    <input type="hidden" value="" id="tags" name="splist">
                                 </div>
                             </div>
                             <div class="form-group">
