@@ -90,27 +90,27 @@
                                         <option value="option2">Alpha Numeric Values</option>
                                     </select>
                                 </div>
-                                <br/>
+                                <br/><br/>
                                 <br/>
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label"></label>
                                     <div id="option1" class="col-lg-8 box">
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="text" placeholder="one">
+                                            <input class="form-control" name="min" type="text" placeholder="min">
                                         </div>
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="text" placeholder="one">
+                                            <input class="form-control" name="max" type="text" placeholder="max">
                                         </div>
                                     </div>
                                     <div id="option2" class="col-lg-8 box">
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="text" placeholder="">
+                                            <input class="form-control" name="high" type="text" placeholder="High">
                                         </div>
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="text" placeholder="two">
+                                            <input class="form-control" name="low" type="text" placeholder="Low">
                                         </div>
                                         <div style="margin-top:10px;" class="col-lg-6">
-                                            <input class="form-control" type="text" placeholder="">
+                                            <input class="form-control" name="normal" type="text" placeholder="Normal">
                                         </div>
                                     </div>
                                 </div>
@@ -131,6 +131,7 @@
                                         </c:forEach>
                                     </tr>
                                     </table>
+                                    <input type="text" value="" id="tags" name="splist">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -183,6 +184,18 @@
             $('#'+$(this).val()).show();
         });
     });
+
+    function Populate(){
+        vals = $('input[type="checkbox"]:checked').map(function() {
+            return this.value;
+        }).get().join(',');
+        console.log(vals);
+        $('#tags').val(vals);
+    }
+
+    $('input[type="checkbox"]').on('change', function() {
+        Populate()
+    }).change();
 </script>
 
 </body>

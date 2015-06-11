@@ -31,12 +31,23 @@ public class TestTypeController {
 
     @RequestMapping(value ="/module/LabM/savetype", method=RequestMethod.POST)
     public String saveTestType(HttpSession httpSession, final HttpServletRequest request){
+        int im = 0;
         String tname = request.getParameter("tname");
         String lsname = request.getParameter("lsname");
         String description = request.getParameter("description");
         String measure = request.getParameter("measure");
-        String specimen = request.getParameter("specimen");
         String cost = request.getParameter("cost");
+        if(measure == "option1"){
+            String min = request.getParameter("min");
+            String max = request.getParameter("max");
+            im = 1;
+        }else{
+            String high = request.getParameter("high");
+            String low = request.getParameter("low");
+            String normal = request.getParameter("normal");
+        }
+        String sp = request.getParameter("splist");
+        String[] spList = sp.split(",");
         return "redirect:lab_section.form";
     }
 }
