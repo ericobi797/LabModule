@@ -135,6 +135,7 @@
                                                                 <input class="form-control" id="uname" name="uname" placeholder="${specimen.name}" type="text">
                                                             </div>
                                                         </div>
+                                                        <br/><br/>
                                                         <div class="form-group">
                                                             <label for="textArea" class="col-lg-2 control-label">Description</label>
                                                             <div class="col-lg-5">

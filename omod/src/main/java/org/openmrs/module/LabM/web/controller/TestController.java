@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class TestController {
     protected final Log log = LogFactory.getLog(getClass());
 
-    @RequestMapping(value = "/module/LabM/viewtest", method = RequestMethod.GET)
+    @RequestMapping(value = "/module/LabM/home", method = RequestMethod.GET)
     public void manage(ModelMap model) {
         String aa = "lala";
         model.addAttribute("allspecimen", aa);

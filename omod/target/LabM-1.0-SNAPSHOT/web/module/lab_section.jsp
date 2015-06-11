@@ -104,10 +104,10 @@
                 <table id="example"  class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>#</th>
                         <th>Lab Name</th>
                         <th>Lab Description</th>
-                        <th>Action</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -135,6 +135,7 @@
                                                                 <input class="form-control" id="lsname" name="lsname" placeholder="Blood" type="text" value="${ls.sectionName}">
                                                             </div>
                                                         </div>
+                                                        <br/><br/>
                                                         <div class="form-group">
                                                             <label for="textArea" class="col-lg-2 control-label">Description</label>
                                                             <div class="col-lg-5">
