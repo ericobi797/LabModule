@@ -16,7 +16,7 @@
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery-1.11.1.min.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery.dataTables.min.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/dataTables.bootstrap.js"/>
-    <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.js"/>s
+    <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.js"/>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#example').dataTable();
@@ -56,7 +56,6 @@
             <li><a href="#">Test Catalogue</a></li>
             <li><a href="test.html">Test Types</a></li>
             <li><a href="specitype.html">Specimen Types</a></li>
-
             <li><a href="specimen.html">Specimen Catalogue</a></li>
             <li><a href="#">Reports</a></li>
         </ul>
@@ -123,11 +122,11 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">Edit Lab Section: ${specimen.name}</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Edit Specimen: ${specimen.name}</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form style="margin-left:100px;" class="form-horizontal" action="<c:url value='update.form' />" method='get' >
+                                                <form style="margin-left:100px;" class="form-horizontal" action="<c:url value='update.form' />" method="GET" >
                                                     <fieldset>
                                                         <input type="hidden" name="id" value="${specimen.id}">
                                                         <div class="form-group">
@@ -159,10 +158,10 @@
                                     </div>
                                 </div>
                             </td>
-                            <td><a href="<c:url value='delete.form?id=${specimen.id}' />">delete</a></td>
+                            <td><a href="<c:url value='delete.form?id=${specimen.id}'/>">delete</a></td>
                         </tr>
                     </c:forEach>
-                    </tbody>
+                   </tbody>
                 </table>
             </div>
         </div>
@@ -170,7 +169,5 @@
     </div>
     <br/>
 </div>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

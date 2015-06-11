@@ -126,7 +126,7 @@
                                                 <h4 class="modal-title">Edit Specimen: ${specimen.name}</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form style="margin-left:100px;" class="form-horizontal" action="<c:url value='update.form' />" method='get' >
+                                                <form style="margin-left:100px;" class="form-horizontal" action="<c:url value='update.form' />" method="GET" >
                                                     <fieldset>
                                                         <input type="hidden" name="id" value="${specimen.id}">
                                                         <div class="form-group">
@@ -135,6 +135,7 @@
                                                                 <input class="form-control" id="uname" name="uname" placeholder="${specimen.name}" type="text">
                                                             </div>
                                                         </div>
+                                                        <br/><br/>
                                                         <div class="form-group">
                                                             <label for="textArea" class="col-lg-2 control-label">Description</label>
                                                             <div class="col-lg-5">
@@ -158,10 +159,10 @@
                                     </div>
                                 </div>
                             </td>
-                            <td><a href="<c:url value='delete.form?id=${specimen.id}' />">delete</a></td>
+                            <td><a href="<c:url value='delete.form?id=${specimen.id}'/>">delete</a></td>
                         </tr>
                     </c:forEach>
-                    </tbody>
+                   </tbody>
                 </table>
             </div>
         </div>
@@ -169,7 +170,5 @@
     </div>
     <br/>
 </div>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
