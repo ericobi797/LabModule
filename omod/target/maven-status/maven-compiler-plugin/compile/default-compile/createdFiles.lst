@@ -1,0 +1,6 @@
+org\openmrs\module\LabM\web\controller\TestController.class
+org\openmrs\module\LabM\web\controller\LaboratoryManageController.class
+org\openmrs\module\LabM\web\controller\DoctorController.class
+org\openmrs\module\LabM\web\controller\LabSectionController.class
+org\openmrs\module\LabM\extension\html\AdminList.class
+org\openmrs\module\LabM\web\controller\TestTypeController.class

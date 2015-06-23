@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.LabM">
+
+    <class name="Measures"
+           table="LabM_measures">
+        <id name="id" type="int" column="measure_id" unsaved-value="0">
+            <generator class="foreign">
+                <param name="property">labTest</param>
+            </generator>
+        </id>
+        <!--<discriminator column="measure_id" insert="false" />-->
+        <property name="type" type="java.lang.Integer" column="type" length="255"/>
+        <property name="value" type="java.lang.String" column="value"
+                  length="255"/>
+        <one-to-one name="labTest"></one-to-one>
+
+    </class>
+
+</hibernate-mapping>
