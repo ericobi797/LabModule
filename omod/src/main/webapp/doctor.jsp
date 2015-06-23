@@ -11,6 +11,7 @@
 <html>
 <head>
     <title></title>
+    <link rel="icon" type="image/png" href="/openmrs/moduleResources/LabM/openmrs-favicon.png">
     <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.css"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery-1.11.1.min.js"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery.dataTables.min.js"/>
@@ -37,12 +38,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Lab Module</a>
+            <div style="margin-top: -34px;height: 89px;">
+                <a class="navbar-brand" href="/openmrs/admin"><img style="height:70px; margin-top:12px;" src="/openmrs/moduleResources/LabM/logo.png"></a>
+            </div>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Logout</a></li>
             </ul>
         </div>
     </div>
@@ -52,12 +54,7 @@
 <div class="">
     <div class="col-md-3">
         <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Test Catalogue</a></li>
-            <li><a href="test.html">Test Types</a></li>
-            <li><a href="specitype.html">Specimen Types</a></li>
-            <li><a href="specimen.html">Specimen Catalogue</a></li>
-            <li><a href="#">Reports</a></li>
+            <li class="active"><a href="<c:url value='doctor.form' />">Doctor Panel</a></li>
         </ul>
     </div>
 
@@ -156,6 +153,46 @@
                 </c:if>
             </div>
         </div>
+
+
+        <hr>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Tests
+            </div>
+            <div class="panel-body">
+                <c:if test="${!empty resultlist}">
+                    <table id="example"  class="table table-striped table-bordered table-hover" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Patient Id</th>
+                            <th>Test Name</th>
+                            <th>Specimen Name</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${resultlist}" var="ls">
+                            <tr>
+                                <td>${ls.patientId}</td>
+                                <td>${ls.labTest.testName}</td>
+                                <td>${ls.specimen.name}</td>
+                                <td>
+                                    <c:if test="${ls.status == NULL}">
+                                        Test Not Done
+                                    </c:if>
+                                    <c:if test="${ls.status == 1}">
+                                        Test Result: ${ls.result}
+                                    </c:if>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </c:if>
+            </div>
+        </div>
+
 
     </div>
     <div class="col-md-1"></div>

@@ -34,7 +34,8 @@
 		LabTest.hbm.xml
 		Measures.hbm.xml
 		TestSpecimen.hbm.xml
-				
+		Results.hbm.xml
+
 	</mappingFiles>
 
 	<!-- Internationalization -->

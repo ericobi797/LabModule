@@ -30,6 +30,7 @@ public class Specimen extends BaseOpenmrsObject implements Serializable {
 	private String name;
 	private String description;
 	private Set<TestSpecimen> testSpecimenSet;
+	private Set<Results> resultsSet;
 	
 	@Override
 	public Integer getId() {
@@ -66,4 +67,11 @@ public class Specimen extends BaseOpenmrsObject implements Serializable {
 	}
 
 
+	public Set<Results> getResultsSet() {
+		return resultsSet;
+	}
+
+	public void setResultsSet(Set<Results> resultsSet) {
+		this.resultsSet = resultsSet;
+	}
 }

@@ -19,7 +19,7 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
     private Measures measures;
     private LabSection labSection;
     private Set<TestSpecimen> testSpecimenSet;
-
+    private Set<Results> resultsSet;
 
 
     @Override
@@ -90,4 +90,11 @@ public class LabTest extends BaseOpenmrsObject implements Serializable {
         this.testSpecimenSet = testSpecimenSet;
     }
 
+    public Set<Results> getResultsSet() {
+        return resultsSet;
+    }
+
+    public void setResultsSet(Set<Results> resultsSet) {
+        this.resultsSet = resultsSet;
+    }
 }

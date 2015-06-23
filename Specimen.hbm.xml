@@ -29,5 +29,10 @@
 			<one-to-many class="TestSpecimen"/>
 		</set>
 
+		<set name="resultsSet" inverse="true" cascade="all">
+			<key column="specimen_id" not-null="true"/>
+			<one-to-many class="Results"/>
+		</set>
+
 	</class>
 </hibernate-mapping>

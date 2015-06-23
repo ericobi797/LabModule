@@ -17,11 +17,11 @@
                   length="255"/>
         <property name="result" type="java.lang.String" column="result" length="255"/>
         <property name="status" type="java.lang.Integer" column="status" length="255"/>
-        <property name="specimenId" type="java.lang.Integer" column="specimen_id" length="255"/>
-        <property name="test" type="java.lang.Integer" column="test" length="255"/>
+        <!--<property name="specimenId" type="java.lang.String" column="specimen_id" length="255"/>
+        <property name="test" type="java.lang.String" column="test" length="255"/>-->
         <property name="resultDate" type="java.lang.String" column="resultDate" length="255"/>
-        <!--<many-to-one name="specimen" class="Specimen" column="specimen_id" not-null="true"/>
-        <many-to-one name="labTest" class="LabTest" column="test" not-null="true"/>-->
+        <many-to-one name="specimen" class="Specimen" column="specimen_id" not-null="true"/>
+        <many-to-one name="labTest" class="LabTest" column="test" not-null="true"/>
 
     </class>
 

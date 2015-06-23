@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/png" href="/openmrs/moduleResources/LabM/openmrs-favicon.png">
     <title></title>
     <openmrs:htmlInclude file="/moduleResources/LabM/bootstrap.min.css"/>
     <openmrs:htmlInclude file="/moduleResources/LabM/jquery-1.11.1.min.js"/>
@@ -37,12 +38,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Lab Module</a>
+            <div style="margin-top: -34px;height: 89px;">
+                <a class="navbar-brand" href="/openmrs/admin"><img style="height:70px; margin-top:12px;" src="/openmrs/moduleResources/LabM/logo.png"></a>
+            </div>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Logout</a></li>
             </ul>
         </div>
     </div>

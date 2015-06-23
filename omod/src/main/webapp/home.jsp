@@ -76,10 +76,8 @@
 <div class="">
     <div class="col-md-3">
         <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="test.html">Test Types</a></li>
-            <li><a href="specitype.html">Specimen Types</a></li>
-            <li><a href="specimen.html">Specimen Catalogue</a></li>
+            <li class="active"><a href="<c:url value='home.form' />">Home</a></li>
+            <li><a href="<c:url value='register.form' />">View Test</a></li>
             <li><a href="#">Reports</a></li>
         </ul>
     </div>
@@ -88,63 +86,28 @@
         <ul class="breadcrumb">
             <li class="active">Home</li>
         </ul>
-        <div class="panel">
+        <div>
 
-            <div class="panel-body">
-                <div class="link link-default col-md-3">
-                    <p>link</p>
+            <hr>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Tests
                 </div>
-                <div class="link link-primary col-md-3">
-                    <p>link</p>
-                </div>
-                <div class="link link-danger col-md-3">
-                    <p>link</p>
-                </div>
-                <div class="link link-warning col-md-3">
-                    <p>link</p>
-                </div>
-                <br/><br/><br/><br/><br/><br/><br/>
-                <div class="col-lg-8">
-                    <h4>Tests</h4>
-                    <table class="table table-responsive table-hover ">
+                <div class="panel-body">
+                    <table id="example" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th colspan="2">Description</th>
+                            <th>Specimen</th>
+                            <th>Description</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Blood</td>
-                            <td>Blood samples</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Urine</td>
-                            <td>Urine samples</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-lg-4">
-                    <h4>Specimen</h4>
-                    <table class="table table-responsive table-hover ">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Blood</td>
-                        <tr>
-                            <td>2</td>
-                            <td>Urine</td>
-                        </tr>
+                        <c:forEach items="${allspecimen}" var="specimen">
+                            <tr>
+                                <td>${specimen.name}</td>
+                                <td>${specimen.description}</td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
